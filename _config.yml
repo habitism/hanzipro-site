@@ -1,0 +1,14 @@
+title: HanziPro
+description: HanziPro is a Chinese language app for English speakers.
+url: "https://hanzipro.cn"
+baseurl: ""
+lang: en
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
