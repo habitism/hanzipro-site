@@ -1,5 +1,6 @@
 ---
 layout: page
+description: Get support for HanziPro. Contact the developer with questions, feedback or suggestions about the Chinese language learning app.
 title: Support
 permalink: /support/
 ---

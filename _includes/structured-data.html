@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "@id": {{ '/#app' | absolute_url | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "image": {{ '/assets/images/app-icon.png' | absolute_url | jsonify }},
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "iOS, Android",
+  "installUrl": [
+    "https://apps.apple.com/us/app/hanzipro/id6670532165",
+    "https://play.google.com/store/apps/details?id=com.habitism.hanzipro"
+  ]
+}
+</script>

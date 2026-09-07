@@ -1,5 +1,6 @@
 ---
 layout: page
+description: Meet HanziPro, a Chinese language app for English speakers. Find the iOS and Android apps and connect with our learning community.
 title: About
 permalink: /about/
 ---

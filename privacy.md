@@ -1,5 +1,6 @@
 ---
 layout: page
+description: Read the HanziPro privacy policy to learn how your information is stored on your device or in your personal cloud account.
 title: Privacy Policy
 permalink: /privacy/
 ---

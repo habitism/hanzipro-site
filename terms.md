@@ -1,5 +1,6 @@
 ---
 layout: page
+description: Read the terms of use for HanziPro, including responsible use, learning content and services provided by other companies.
 title: Terms of Use
 permalink: /terms/
 ---

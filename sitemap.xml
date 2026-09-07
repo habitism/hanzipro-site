@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign sorted_pages = site.pages | sort: 'url' %}
+  {% for entry in sorted_pages %}
+  {% if entry.layout == 'default' or entry.layout == 'page' %}
+  {% unless entry.sitemap == false %}
+  <url>
+    <loc>{{ entry.url | replace: 'index.html', '' | absolute_url | xml_escape }}</loc>
+  </url>
+  {% endunless %}
+  {% endif %}
+  {% endfor %}
+</urlset>

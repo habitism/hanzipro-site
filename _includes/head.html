@@ -1,17 +1,36 @@
+{%- assign seo_description = page.description | default: site.description -%}
+{%- assign canonical_url = page.url | replace: 'index.html', '' | absolute_url -%}
+{%- capture seo_title -%}
+  {%- if page.url == '/' -%}
+    {{ page.title | default: site.title }}
+  {%- else -%}
+    {{ page.title }} | {{ site.title }}
+  {%- endif -%}
+{%- endcapture -%}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f3ea">
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  <meta property="og:title" content="{{ page.title | default: site.title }}">
-  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta name="description" content="{{ seo_description | escape }}">
+  <meta property="og:title" content="{{ seo_title | escape }}">
+  <meta property="og:description" content="{{ seo_description | escape }}">
   <meta property="og:image" content="{{ '/assets/images/app-icon.png' | absolute_url }}">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta property="og:image:alt" content="HanziPro app icon">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <title>{% if page.url == '/' %}{{ site.title }}{% else %}{{ site.title }} · {{ page.title }}{% endif %}</title>
+  <meta property="og:url" content="{{ canonical_url | escape }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ seo_title | escape }}">
+  <meta name="twitter:description" content="{{ seo_description | escape }}">
+  <meta name="twitter:image" content="{{ '/assets/images/app-icon.png' | absolute_url }}">
+  <meta name="twitter:image:alt" content="HanziPro app icon">
+  <title>{{ seo_title | escape }}</title>
+  <link rel="canonical" href="{{ canonical_url | escape }}">
+  {% if page.url == '/' %}
+  {% include structured-data.html %}
+  {% endif %}
   <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ '/assets/images/app-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
