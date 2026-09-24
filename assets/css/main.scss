@@ -24,6 +24,17 @@ body {
 }
 a { color: inherit; }
 
+.short-video-page {
+  width: min(100%, 38rem);
+  margin-inline: auto;
+}
+.short-video {
+  display: block;
+  width: 100%;
+  height: min(177.78vw, 640px);
+  border: 0;
+}
+
 .site-header,
 .section-shell,
 .site-footer {
