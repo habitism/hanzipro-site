@@ -14,3 +14,5 @@ HanziPro is available on [Google Play](https://play.google.com/store/apps/detail
 You can also search for <strong class="product-name">HanziPro</strong> on Google Play or the App Store.
 
 Follow us for learning content, product updates and community on [TikTok](https://www.tiktok.com/@habitist), [Instagram](https://www.instagram.com/hanzipro/), [YouTube](https://www.youtube.com/@habitist), [Rednote](https://www.xiaohongshu.com/user/profile/65bb0d64000000000e025281), [Facebook](https://www.facebook.com/habitism), [Threads](https://www.threads.com/@hanzipro), [X](https://x.com/whenfung) and [Discord](https://discord.gg/9b33pRBuEn).
+
+You can contact me directly via email: [whenfung@gmail.com](mailto:whenfung@gmail.com).
