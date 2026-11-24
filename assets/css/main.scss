@@ -149,3 +149,111 @@ h2 { margin-bottom: 24px; font-size: clamp(2.35rem, 4.5vw, 4rem); font-weight: 6
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+.video-directory {
+  max-width: 680px;
+  padding-block: clamp(36px, 7vw, 72px);
+}
+
+.video-directory h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+}
+
+.video-directory-search-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding-inline: 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.video-directory-search-field:focus-within {
+  outline: 2px solid var(--brand-dark);
+  outline-offset: 2px;
+}
+
+.video-directory-search-icon {
+  position: relative;
+  flex: 0 0 13px;
+  height: 13px;
+  margin-right: 3px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  color: var(--muted);
+}
+
+.video-directory-search-icon::after {
+  position: absolute;
+  right: -4px;
+  bottom: -2px;
+  width: 5px;
+  height: 1.5px;
+  transform: rotate(45deg);
+  background: currentColor;
+  content: '';
+}
+
+.video-directory-search input {
+  flex: 1;
+  min-width: 0;
+  min-height: 46px;
+  padding: 8px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+
+.video-directory-search input::placeholder { color: var(--muted); }
+
+#video-search-status {
+  margin: 9px 0 13px;
+  color: var(--muted);
+  font-size: .875rem;
+}
+
+.video-directory-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.video-directory-list li { border-bottom: 1px solid var(--line); }
+
+.video-directory-list a {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) 12px;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 8px 5px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.video-directory-list a:hover,
+.video-directory-list a:focus-visible {
+  color: var(--brand-dark);
+}
+
+.video-directory-list a::after {
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  color: var(--muted);
+  content: '';
+}
+
+.video-directory-play {
+  justify-self: center;
+  border-block: 5px solid transparent;
+  border-left: 8px solid currentColor;
+  color: var(--brand-dark);
+}

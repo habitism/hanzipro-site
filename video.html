@@ -1,0 +1,71 @@
+---
+layout: default
+title: Chinese Video Lessons
+description: Explore short HanziPro videos on Mandarin pronunciation, vocabulary, grammar, and Chinese characters.
+permalink: /video.html
+---
+
+{% assign videos = site.pages | where_exp: "item", "item.vid" | sort_natural: "title" %}
+
+<header class="site-header compact-header">
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="HanziPro home">
+    <img class="brand-icon" src="{{ '/assets/images/app-icon.png' | relative_url }}" alt="">
+    <span>HanziPro</span>
+  </a>
+  <a class="text-link" href="{{ '/' | relative_url }}">Back home</a>
+</header>
+
+<main class="video-directory section-shell">
+  <h1>{{ page.title }}</h1>
+
+  <div class="video-directory-search" id="video-search-controls" hidden>
+    <div class="video-directory-search-field">
+      <span class="video-directory-search-icon" aria-hidden="true"></span>
+      <input id="video-search" type="search" aria-label="Search video lessons" placeholder="Search video lessons" autocomplete="off" aria-controls="video-list">
+    </div>
+    <p id="video-search-status" role="status">{{ videos.size }} videos</p>
+  </div>
+
+  <ul class="video-directory-list" id="video-list">
+    {% for video in videos %}
+    <li>
+      <a href="{{ video.url | relative_url | escape }}">
+        <span class="video-directory-play" aria-hidden="true"></span>
+        <span>{{ video.title | escape }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
+
+{% include footer.html %}
+
+<script>
+  (() => {
+    const controls = document.getElementById('video-search-controls');
+    const input = document.getElementById('video-search');
+    const status = document.getElementById('video-search-status');
+    const normalize = (value) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+    const videos = Array.from(document.querySelectorAll('#video-list li'), (item) => ({
+      item,
+      title: normalize(item.textContent.trim())
+    }));
+
+    function filterVideos() {
+      const query = normalize(input.value.trim());
+      let count = 0;
+
+      for (const video of videos) {
+        const matches = video.title.includes(query);
+        video.item.hidden = !matches;
+        if (matches) count += 1;
+      }
+
+      status.textContent = count === 0 ? 'No videos found.' : count === 1 ? '1 video' : `${count} videos`;
+    }
+
+    input.addEventListener('input', filterVideos);
+    filterVideos();
+    controls.hidden = false;
+  })();
+</script>
